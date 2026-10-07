@@ -34,6 +34,10 @@ p{margin:0}
 header{display:grid;gap:16px;margin-bottom:28px;position:relative;padding-block:8px 0}
 .tagrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
 .byline{display:inline-block;border:1.5px solid var(--fg);color:var(--fg);border-radius:999px;padding:6px 16px;font-family:var(--body);font-weight:700;font-size:14px;line-height:1.2}
+.themebtn{margin-left:auto;display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--fg);background:transparent;color:var(--fg);border-radius:999px;padding:6px 14px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.themebtn:hover{border-color:var(--accent);color:var(--accent)}
+.themebtn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.themebtn .ti{width:14px;height:14px;border-radius:50%;border:1.5px solid currentColor;background:linear-gradient(90deg,currentColor 50%,transparent 50%)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{border:1px solid var(--line);padding:5px 12px;font-size:13px;background:var(--surface)}
 .chip b{font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-right:6px}
@@ -208,7 +212,7 @@ body.zones .safe{display:block}
 
 <div class="wrap">
 <header>
-  <div class="tagrow"><span class="byline">Ad lab by Simplificate</span><span class="eyebrow">Instagram · Amsterdam · Concept build</span></div>
+  <div class="tagrow"><span class="byline">Ad lab by Simplificate</span><span class="eyebrow">Instagram · Amsterdam · Concept build</span><button type="button" class="themebtn" id="themeBtn" aria-label="Switch colour theme"><span class="ti" aria-hidden="true"></span><span id="themeTxt">Dark</span></button></div>
   <h1>Hide<br><span>Fidelity</span><br>Ad Lab</h1>
   <p class="lead">Twenty-four Instagram ads for one leather brand, built as eight A/B rounds across four phases of the funnel. One visual system, six products, one variable changed per round. The look stays fixed. The hook, the copy and the call to action change with the phase.</p>
   <div class="chips">
@@ -231,7 +235,7 @@ body.zones .safe{display:block}
   </div>
   <div class="grid3">
     <div class="tile"><span class="eyebrow">01</span><strong>Learn the buyer first</strong><p>Audience, price band and product range before the first headline. Here that is style-led buyers aged 22 to 38 in the Netherlands, with an ear for music, shopping a €85 to €295 range.</p></div>
-    <div class="tile"><span class="eyebrow">02</span><strong>Pick the lever, then write</strong><p>Every ad starts from one psychological lever: scarcity, identity, effort, risk reversal. The copy follows the lever, so each variant is a real test and not a rewording.</p></div>
+    <div class="tile"><span class="eyebrow">02</span><strong>Pick the lever, then write</strong><p>Every ad keeps the brand's existing tone of voice and adds a psychological lever and two emotional triggers to it. The copy follows the lever, so each variant tests a separate idea.</p></div>
     <div class="tile"><span class="eyebrow">03</span><strong>Build the system once</strong><p>A fixed look and live layouts keep a large set of variants on brand. Each brand's real product photos go into the designs, so a new product or market only needs new inputs.</p></div>
     <div class="tile"><span class="eyebrow">04</span><strong>Test one variable at a time</strong><p>Each round has one variable, one primary read and one guardrail. The winner carries forward and the next idea has to beat it.</p></div>
   </div>
@@ -267,7 +271,7 @@ body.zones .safe{display:block}
 <section id="catalogue">
   <div class="sec-head">
     <span class="eyebrow">Catalogue</span>
-    <h2>Six pieces, one look</h2>
+    <h2>Six pieces, one range</h2>
   </div>
   <div class="grid3 range" id="range"></div>
 </section>
@@ -280,9 +284,9 @@ body.zones .safe{display:block}
   </div>
   <div class="tpl" id="tpl"></div>
   <div class="grid3" style="margin-top:14px">
-    <div class="tile"><span class="eyebrow">Look</span><strong>Clean and flat</strong><p>Flat colour field, one hero object, tape-label headline. Black leather, cobalt stitching, no models and no lifestyle clutter.</p></div>
-    <div class="tile"><span class="eyebrow">Type</span><strong>Tape-label headline, mono catalogue</strong><p>Big Shoulders Display in caps on label tape, IBM Plex Mono for catalogue numbers and support lines. Six words or fewer in the headline.</p></div>
-    <div class="tile"><span class="eyebrow">Voice</span><strong>Short, confident, plain</strong><p>Wordplay only where it earns its place. Scarcity appears only when a real numbered run exists. No fake countdowns, no invented reviews.</p></div>
+    <div class="tile"><span class="eyebrow">Look</span><strong>Clean and flat</strong><p>Flat colour field, one hero object, headline on solid strips. Black leather, cobalt stitching, no models and no lifestyle clutter.</p></div>
+    <div class="tile"><span class="eyebrow">Type</span><strong>Strip headline, mono catalogue</strong><p>Big Shoulders Display in caps on solid strips, IBM Plex Mono for catalogue numbers and support lines. Six words or fewer in the headline.</p></div>
+    <div class="tile"><span class="eyebrow">Voice</span><strong>Short, confident, plain</strong><p>Wordplay only where it earns its place. Scarcity appears only when a real numbered run exists.</p></div>
     <div class="tile"><span class="eyebrow">Placements</span><strong>Instagram feed 4:5, Stories and Reels 9:16</strong><p>Every cell is sized for the placement it runs in. Text stays out of the top 14% and bottom 20% of vertical frames. Placements are set by hand while testing.</p></div>
     <div class="tile"><span class="eyebrow">Targeting base</span><strong>Interests, then behaviour</strong><p>Music, festivals, streetwear, vintage, premium fashion, leather footwear. Lookalikes from purchasers once there are 500 or more.</p></div>
     <div class="tile"><span class="eyebrow">Language</span><strong>Plain English, euro pricing</strong><p>International English for a Dutch market. Euro prices, EU sizing, delivery and returns. Local references stay light.</p></div>
@@ -318,11 +322,11 @@ body.zones .safe{display:block}
   </div>
   <div class="grid3">
     <div class="tile"><strong>Meta A/B test</strong><p>Meta splits the audience so cells never overlap. Dynamic creative mixes elements and hides which one won. Use it only after a winner exists, to polish copy.</p></div>
-    <div class="tile"><strong>Seven days minimum per round</strong><p>Covers weekday and weekend shopping. Stop early only if one cell is losing on cost by 40% or more with enough spend.</p></div>
+    <div class="tile"><strong>Seven to thirty days per round</strong><p>Seven days is the floor, so weekday and weekend behaviour both count. The round closes once each cell reaches its conversion target, within 30 days. Results in the first days are unstable, so no winner is called before the round closes.</p></div>
     <div class="tile"><strong>Equal budget per cell</strong><p>Cells share the round budget evenly. A cell needs roughly 25 to 50 of its target event before it is read.</p></div>
-    <div class="tile"><strong>Winners carry forward as messages</strong><p>The winning idea moves into the next round and new ideas challenge it. Products rotate between rounds so every piece in the range gets read.</p></div>
+    <div class="tile"><strong>Winners carry forward as messages</strong><p>Meta reports how likely the winning cell is to win again. A low score counts as a tie, and the current winner stays.</p></div>
     <div class="tile"><strong>Optimise on a proxy when thin</strong><p>Early rounds optimise on landing page views or add-to-cart. Purchases need about 50 a week before Meta learns on them.</p></div>
-    <div class="tile"><strong>Scale with the winners</strong><p>After round 8, move the winning creative from each phase into one Advantage+ sales campaign and read MER weekly, so no platform grades its own homework.</p></div>
+    <div class="tile"><strong>Scale with the winners</strong><p>Once round 8 closes, the winning creative from each phase moves into the live campaigns.</p></div>
   </div>
 </section>
 </div>
@@ -397,7 +401,7 @@ const PH={
  Awareness:{id:'awareness',job:'Stop a cold scroll. The viewer has never heard of the brand.',hook:'Wordplay, identity and scarcity. Six words or fewer.',cta:'Shop Now or Learn More'},
  Consideration:{id:'consideration',job:'Give a warm audience one reason to believe.',hook:'Craft, longevity and community. One idea, one short paragraph.',cta:'Learn More or Shop Now'},
  Conversion:{id:'conversion',job:'Remove the last doubt for people who already want it.',hook:'A specific ask. Reserve, try or take a clear offer.',cta:'Order Now'},
- Retargeting:{id:'retargeting',job:'Bring back people who left, and sell again to people who bought.',hook:'Personal and short. Nothing new to explain.',cta:'Order Now or Shop Now'}
+ Retargeting:{id:'retargeting',job:'Bring back people who left, and sell again to people who bought.',hook:'Personal and short. One line that brings the product back to mind.',cta:'Order Now or Shop Now'}
 };
 const NL5=(a,b,c)=>[{cls:'rot1',w:[[a,'big']]},{cls:'rot2',w:b?[[b,'sm'],[c,'big']]:[[c,'big']]}];
 const ROUNDS=[
@@ -444,16 +448,16 @@ const ROUNDS=[
   aud:'Warm. Same pool as round 3, fresh split. Manual placements, one per cell.',read:'Cost per add-to-cart',
   cells:[
    {id:'4a',cell:'A',lay:'lb',prod:'loafer',fmt:'9:16',placement:'IG Stories',t:['Wears in.','Never out.'],sub:'',
-    pt:'Story, single frame. The loafer fills the screen, link sticker reading "Shop the loafer". No caption.',hd:'Wears in. Never out.',desc:'Link sticker, no caption.',cta:'Shop Now',name:'HF_R4A_Format-Story_IGS-9x16',nocount:true,
-    psych:'Immediacy',emo:['Urgency to act','Focus'],why:'Stories are full screen and one thumb from the link. It is the shortest path from noticing to tapping, with no feed around it competing.'},
+    cue:['Full screen','Thumb reach'],pt:'Story, single frame. The loafer fills the screen, link sticker reading "Shop the loafer". No caption.',hd:'Wears in. Never out.',desc:'Link sticker, no caption.',cta:'Shop Now',name:'HF_R4A_Format-Story_IGS-9x16',nocount:true,
+    psych:'Immediacy',emo:['Urgency to act','Clarity'],why:'Stories are full screen and one thumb from the link. It is the shortest path from noticing to tapping, with no feed around it competing.'},
    {id:'4b',cell:'B',lay:'reel',prod:'loafer',fmt:'9:16',placement:'IG Reels',
-    pt:'Reel, 7-second loop. Soft street ambience on the first frame, one low note as the loafer lands, a leather creak on the sole close-up. Caption: "Wears in. Never out."',hd:'Wears in. Never out.',desc:'7-second loop, sound on.',cta:'Shop Now',name:'HF_R4B_Format-Reel_IGR-9x16',nocount:true,
+    cue:['Sound on','Seamless loop'],pt:'Reel, 7-second loop. Soft street ambience on the first frame, one low note as the loafer lands, a leather creak on the sole close-up. Caption: "Wears in. Never out."',hd:'Wears in. Never out.',desc:'7-second loop, sound on.',cta:'Shop Now',name:'HF_R4B_Format-Reel_IGR-9x16',nocount:true,
     psych:'Multisensory congruence',emo:['Satisfaction','Cool'],why:'Sound makes leather feel real. A low note and a creak add weight to the product, and Reels reach the younger end of the audience at low CPM.'},
    {id:'4c',cell:'C',lay:'car',prod:'loafer',fmt:'4:5',placement:'IG feed carousel',
-    pt:'Carousel, four cards. 1 the hook. 2 the material. 3 how it wears. 4 the numbered run. Caption: "Everything you would ask before buying, in four swipes."',hd:'Wears in. Never out.',desc:'Four swipes, no guessing.',cta:'Learn More',name:'HF_R4C_Format-Carousel_IGF-4x5',nocount:true,
+    cue:['Swipe','Sequence'],pt:'Carousel, four cards. 1 the hook. 2 the material. 3 how it wears. 4 the numbered run. Caption: "Everything you would ask before buying, in four swipes."',hd:'Wears in. Never out.',desc:'Four swipes, no guessing.',cta:'Learn More',name:'HF_R4C_Format-Carousel_IGF-4x5',nocount:true,
     psych:'Progressive disclosure',emo:['Curiosity','Confidence'],why:'A swipe sequence lets a sceptical buyer reach the proof at their own pace. An unfinished set of cards also pulls people to the last one.'}
   ]},
- {n:5,stage:'Conversion',variable:'The ask',hyp:'These shoppers already added to cart. They need a smaller yes, and a new pitch adds nothing. Which ask lifts purchases: a numbered reservation, a trial or free delivery both ways?',
+ {n:5,stage:'Conversion',variable:'The ask',hyp:'These shoppers already added to cart. They need a smaller yes, and a new pitch adds nothing. Which ask lifts purchases: a numbered reservation, a trial or free delivery and returns?',
   aud:'Hot. Add-to-cart 14 days, product page 14 days. Purchasers excluded for 30 days.',read:'Cost per purchase, full-price share',
   cells:[
    {id:'5a',cell:'A',lay:'pn',prod:'boot',fmt:'4:5',placement:'IG feed',cat:'HF / RUN<br>NO. 001 OF 500',nl:NL5('Made','to','order.'),stamp:'{ 1 of 500 }',
@@ -462,7 +466,7 @@ const ROUNDS=[
    {id:'5b',cell:'B',lay:'pn',prod:'boot',fmt:'4:5',placement:'IG feed',cat:'HF / TRIAL<br>30 DAYS',nl:NL5('Wear','them','in.'),stamp:'{ 30 days }',
     pt:'Wear them around town, to work, to the show. Not you? Send them back free within 30 days.',hd:'30 days to change your mind',desc:'Free returns. 100% leather.',cta:'Shop Now',name:'HF_R5B_Ask-Trial_IGF-4x5',
     psych:'Risk reversal and endowment',emo:['Safety','Relief'],why:'The main objection to a premium boot is fit and regret. A free trial removes it, and once the boots have been worn they feel like yours.'},
-   {id:'5c',cell:'C',lay:'pn',prod:'boot',fmt:'4:5',placement:'IG feed',cat:'HF / DELIVERY<br>AND RETURNS',nl:NL5('Free','both','ways.'),stamp:'{ € 0 }',
+   {id:'5c',cell:'C',lay:'pn',prod:'boot',fmt:'4:5',placement:'IG feed',cat:'HF / DELIVERY<br>AND RETURNS',nl:NL5('Ships','for','free.'),stamp:'{ NL + EU }',
     pt:'Free delivery in the Netherlands and free returns. The Amstel Boot, 100% leather, made to order.',hd:'Free delivery. Free returns.',desc:'Netherlands and EU.',cta:'Order Now',name:'HF_R5C_Ask-FreeShip_IGF-4x5',
     psych:'Zero price effect',emo:['Relief','Ease'],why:'Delivery cost is a common reason for an abandoned cart. Free does more than lower the price in the mind. It removes the sum.'}
   ]},
@@ -484,15 +488,15 @@ const ROUNDS=[
   cells:[
    {id:'7a',cell:'A',lay:'lb',prod:'bag',fmt:'9:16',placement:'IG Stories',t:['Still','yours.'],sub:'',tag:'Finish order',
     pt:'Still yours. The Prinsen Bag is waiting in your cart, 100% leather and made to order.',hd:'Still yours',desc:'Back to your cart.',cta:'Order Now',name:'HF_R7A_Reminder_IGS-9x16',
-    psych:'Endowment effect and loss aversion',emo:['Ownership','Pull'],why:'Once an item has sat in a cart it feels half owned, and leaving it reads as a loss. The shortest line is enough because there is nothing new to explain.'},
+    psych:'Endowment effect and loss aversion',emo:['Ownership','Longing'],why:'Once an item has sat in a cart it feels half owned, and leaving it reads as a loss. A short line is enough because the shopper already knows the product.'},
    {id:'7b',cell:'B',lay:'lb',prod:'bag',fmt:'9:16',placement:'IG Stories',t:['30 days.','Free returns.'],sub:'',tag:'Try it',
     pt:'Not sure yet? Wear it for 30 days. If it does not suit you, send it back free. The Prinsen Bag, 100% leather.',hd:'30 days, free returns',desc:'No risk.',cta:'Order Now',name:'HF_R7B_Reassure_IGS-9x16',
     psych:'Risk reversal',emo:['Safety','Relief'],why:'Doubt about value is a usual reason a shopper leaves. A free return answers it directly.'},
    {id:'7c',cell:'C',lay:'lb',prod:'bag',fmt:'9:16',placement:'IG Stories',t:['Laptop, notebook,','everything else.'],sub:'',tag:'Shop the bag',
     pt:'Fits a 13-inch laptop and a notebook. The Prinsen Bag, 100% leather.',hd:'Fits your whole day',desc:'The Prinsen Bag.',cta:'Shop Now',name:'HF_R7C_Utility_IGS-9x16',
-    psych:'Mental simulation',emo:['Utility','Ownership'],why:'Naming real objects makes the shopper picture the bag in their day, and picturing use lifts intent more than a feature list does.'}
+    psych:'Mental simulation',emo:['Reassurance','Ownership'],why:'Naming real objects makes the shopper picture the bag in their day, and picturing use lifts intent more than a feature list does.'}
   ]},
- {n:8,stage:'Retargeting',variable:'Next product',hyp:'People who already bought are the cheapest next sale. One line, three products. Which piece do existing customers add next: a second shoe, a bag or the hero boot?',
+ {n:8,stage:'Retargeting',variable:'Next product',hyp:'People who already bought have built trust in the brand, and the next product keeps them in the range. One line, three products. Which piece do existing customers add next: a second shoe, a bag or the hero boot?',
   aud:'Purchasers 30 to 180 days, Instagram engagers 90 days. Catalogue feed, one product per cell.',read:'Repeat purchase rate, cross-category share',
   cells:[
    {id:'8a',cell:'A',lay:'rt',prod:'chelsea',fmt:'4:5',placement:'IG feed',t:['Same stitch.','Next piece.'],nm:'The Singel Chelsea',code:'HF-004',price:'€225',cta:'Shop Now',
@@ -518,17 +522,17 @@ function creative(v){
 }
 function card(v,r){
  const strip=v.lay==='reel'||v.lay==='car';
- const full=`Primary text: ${v.pt}\nHeadline: ${v.hd}\nDescription: ${v.desc}\nCTA: ${v.cta}\nAd name: ${v.name}`;
+ const full=`Primary text: ${v.pt}\nHeadline: ${v.hd}\nDescription: ${v.desc}\nCTA: ${v.cta}`;
  const cnt=v.nocount?'':`<span class="cnt">Primary ${v.pt.length} chars (125 shown before more) · headline ${v.hd.length}/40 · description ${v.desc.length}</span>`;
  return `<article class="card">
   <div class="bar"><span class="badge">Round ${r.n} · Cell ${v.cell}</span><span class="fmt">${v.fmt} · ${v.placement}</span></div><div class="art${strip?' strip-wrap':''}">${creative(v)}</div>
   <div class="meta">
    <div class="kv"><span class="k">Psychology</span><span class="v">${v.psych}</span></div>
    <div class="kv"><span class="k">Emotional triggers</span><div class="trig">${v.emo.map(e=>`<span>${e}</span>`).join('')}</div></div>
+   ${v.cue?`<div class="kv"><span class="k">Format cues</span><div class="trig">${v.cue.map(e=>`<span>${e}</span>`).join('')}</div></div>`:''}
    <div class="copy"><span class="k" style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:var(--accent)">Ads Manager copy</span>
     <span class="pt">${v.pt}</span><span class="hl">Headline: ${v.hd}</span><span class="pt" style="opacity:.8">Description: ${v.desc}</span><span class="cta">${v.cta}</span>${cnt}
     <button class="cbtn" type="button" data-copy="${esc(full)}">Copy for Ads Manager</button></div>
-   <div class="kv"><span class="k">Ad name</span><code class="nm">${v.name}</code></div>
    <div class="kv"><span class="k">Why this angle</span><span class="v m">${v.why}</span></div>
   </div></article>`;
 }
@@ -558,8 +562,8 @@ document.getElementById('range').innerHTML=RANGE.map(r=>`<div class="tile"><img 
 
 /* layouts */
 const TPL=[
- {name:'Label Tape',stage:'Awareness',html:adLabel({fmt:'4:5',prod:'loafer',t:['Made to','be worn.'],sub:''}),
-  note:'Full-bleed product photograph, two tape strips for the headline, the logo bottom left. Built for the cold feed, where one glance has to land.'},
+ {name:'Full Frame',stage:'Awareness',html:adLabel({fmt:'4:5',prod:'loafer',t:['Made to','be worn.'],sub:''}),
+  note:'Full-bleed product photograph, two solid strips for the headline, the logo bottom left. Built for the cold feed, where one glance has to land.'},
  {name:'Story Panel',stage:'Consideration',html:adNotes({fmt:'4:5',prod:'bag',cat:'HF-000 / CRAFT',hl:'Cut, stitched, numbered.',para:'Cut from <b>100% leather</b>. Stitched in cobalt and numbered before it leaves us.'}),
   note:'A product field above a black band. Big headline, one short paragraph, one highlighted phrase. Built for people who know the brand and want a reason to believe.'},
  {name:'Order Notice',stage:'Conversion',html:adNotice({fmt:'4:5',prod:'belt',cat:'HF / RUN<br>NO. 000 OF 500',nl:NL5('Made','to','order.'),stamp:'{ 1 of 500 }'}),
@@ -577,6 +581,15 @@ document.addEventListener('click',e=>{
  const fb=()=>{const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done()}catch(_){}ta.remove()};
  try{navigator.clipboard.writeText(t).then(done,fb)}catch(_){fb()}
 });
+
+(function(){
+  var root=document.documentElement,btn=document.getElementById('themeBtn'),txt=document.getElementById('themeTxt');
+  function cur(){var t=root.getAttribute('data-theme');if(t)return t;return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+  function label(){var n=cur()==='dark'?'Light':'Dark';txt.textContent=n;btn.setAttribute('aria-label','Switch to '+n.toLowerCase()+' mode')}
+  try{var s=localStorage.getItem('hf-theme');if(s==='light'||s==='dark')root.setAttribute('data-theme',s)}catch(e){}
+  label();
+  btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('hf-theme',n)}catch(e){}label()});
+})();
 </script>
 
 </body></html>
